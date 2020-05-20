@@ -1,0 +1,6 @@
+C:\Users\Simon\source\repos\SkpOpgCSharpExercises\SkpOpgCSharpExercises\bin\Debug\SkpOpgCSharpExercises.exe.config
+C:\Users\Simon\source\repos\SkpOpgCSharpExercises\SkpOpgCSharpExercises\bin\Debug\SkpOpgCSharpExercises.exe
+C:\Users\Simon\source\repos\SkpOpgCSharpExercises\SkpOpgCSharpExercises\bin\Debug\SkpOpgCSharpExercises.pdb
+C:\Users\Simon\source\repos\SkpOpgCSharpExercises\SkpOpgCSharpExercises\obj\Debug\SkpOpgCSharpExercises.csprojAssemblyReference.cache
+C:\Users\Simon\source\repos\SkpOpgCSharpExercises\SkpOpgCSharpExercises\obj\Debug\SkpOpgCSharpExercises.exe
+C:\Users\Simon\source\repos\SkpOpgCSharpExercises\SkpOpgCSharpExercises\obj\Debug\SkpOpgCSharpExercises.pdb
