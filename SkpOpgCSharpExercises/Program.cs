@@ -71,20 +71,93 @@ namespace SkpOpgCSharpExercises
             //Exercise58(new int[] { 1, 3, 4, 7, 9, 13, 14, 20});
             //Console.WriteLine(Exercise59(new int[] { 1, 7, 4, 8, 9 }));
             //Exercise60(new int[][] { new int[] {0, 2, 3, 2}, new int[] {0, 6, 0, 1}, new int[] {4, 0, 3, 0} });
-            Exercise61(new int[] { -5, 236, 120, 70, -5, -5, 698, 280 });
-            //Exercise62();
+            //Exercise61(new int[] { -5, 236, 120, 70, -5, -5, 698, 280 });
+            //Exercise62("ab(cd(ef)gh)ij");
             Console.ReadLine();
         }
-        static void Exercise62()
+        static void Exercise62(string a)
         {
-            string test = (string)"kage".Reverse();
-            Console.WriteLine(test);
-            /*
-     
-            p(rq)st         -->    pqrst
-            (p(rq)st)       -->    tsrqp
-            ab(cd(ef)gh)ij  -->    abhgefdcij
-             */
+            bool FirstIndexParenthesis = false;
+            int ParenthesisCounter = 0;
+            string Newa = "";
+            char[] aCharArr = a.ToCharArray();
+            for (int i = 0; i < aCharArr.Length; i++)
+            {
+                if (i == 0 && aCharArr[i] == '(')
+                {
+                    FirstIndexParenthesis = true;
+                    ParenthesisCounter++;
+                }
+                else if (aCharArr[i] == '(' || aCharArr[i] == ')')
+                {
+                    ParenthesisCounter++;
+                }
+            }
+            for (int i = 0; i < aCharArr.Length; i++)
+            {
+                if (aCharArr[i] == '(' || aCharArr[i] == ')')
+                {
+                    aCharArr[i] = ' ';
+                }
+            }
+            for (int i = 0; i < aCharArr.Length; i++)
+            {
+                Newa += aCharArr[i];
+            }
+            Newa = Newa.Trim();
+            string[] aArray = Newa.Split(' ');
+            if (ParenthesisCounter == 2)
+            {
+                string SegmentToChange = aArray[(aArray.Length - 1) / 2];
+                string NewSegment = "";
+                for (int i = SegmentToChange.Length - 1; i >= 0; i--)
+                {
+                    NewSegment += SegmentToChange[i];
+                }
+                aArray[(aArray.Length - 1) / 2] = NewSegment;
+                string NewString = "";
+                for (int i = 0; i < aArray.Length; i++)
+                {
+                    NewString += aArray[i];
+                }
+                Console.WriteLine(NewString);
+            }
+            else
+            {
+                string First = aArray[0];
+                string Last = aArray[aArray.Length - 1];
+                string[] reversedaArray = new string[aArray.Length];
+                int ReverseArrayCounter = 0;
+                for (int i = aArray.Length - 1; i >= 0; i--)
+                {
+                    reversedaArray[ReverseArrayCounter] = aArray[i];
+                    ReverseArrayCounter++;
+                }
+                for (int i = 0; i < reversedaArray.Length; i++)
+                {
+                    if (i != (reversedaArray.Length - 1) / 2)
+                    {
+                        char[] CurrIndex = reversedaArray[i].ToCharArray();
+                        string CurrIndexReversed = "";
+                        for (int j = CurrIndex.Length - 1; j >= 0; j--)
+                        {
+                            CurrIndexReversed += CurrIndex[j];
+                        }
+                        reversedaArray[i] = CurrIndexReversed;
+                    }
+                }
+                if (FirstIndexParenthesis == false)
+                {
+                    reversedaArray[0] = First;
+                    reversedaArray[reversedaArray.Length - 1] = Last;
+                }
+                string NewString = "";
+                for (int i = 0; i < reversedaArray.Length; i++)
+                {
+                    NewString += reversedaArray[i];
+                }
+                Console.WriteLine(NewString);
+            }
         }
         static void Exercise61(int[] numberArr)
         {
